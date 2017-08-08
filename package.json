@@ -1,0 +1,30 @@
+{
+  "name": "react-bundle-util",
+  "version": "1.0.0",
+  "description": "Bundle Utils For React Component.",
+  "main": "dist/react-bundle-util.umd.js",
+  "jsnext:main": "dist/react-bundle-util.es.js",
+  "module": "dist/react-bundle-util.es.js",
+  "entry": "src/index.js",
+  "scripts": {
+    "build": "bup . # compiles pkg.entry"
+  },
+  "keywords": [
+    "webpack",
+    "react bundle",
+    "code splitting",
+    "bundle util"
+  ],
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-preset-env": "^1.6.0",
+    "bup": "^1.0.9",
+    "react": "^15.6.1"
+  },
+  "author": "Star",
+  "license": "MIT"
+}
