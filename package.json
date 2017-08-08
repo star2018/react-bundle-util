@@ -1,6 +1,6 @@
 {
   "name": "react-bundle-util",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bundle Utils For React Component.",
   "main": "dist/react-bundle-util.umd.js",
   "jsnext:main": "dist/react-bundle-util.es.js",
@@ -25,6 +25,8 @@
     "bup": "^1.0.9",
     "react": "^15.6.1"
   },
+  "homepage": "https://github.com/star2018/react-bundle-util",
+  "repository": "https://github.com/star2018/react-bundle-util",
   "author": "Star",
   "license": "MIT"
 }

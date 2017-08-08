@@ -36,28 +36,45 @@
 
 ## Component for React Router
 
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
     import get from 'react-bundle-util';
 
-    // sync module without code splitting.
-    import Home from '../views/Home';
+    // local import
+    import Home from './views/Home';
 
     // async module but not lazy load with code splitting.
-    const Comment = get(import('../views/Comment'));
+    const Comment = get(import('./views/Comment'));
     // lazy load module with code splitting.
-    const Detail = get(resolve => require(['../views/Detail'], resolve));
+    const Detail = get(resolve => require(['./views/Detail'], resolve));
+    // the export module is not the default.
+    const List = get(resolve => require(['./views/List'], module => resolve(module.List)));
 
     class App extends React.Component {
         render() {
             return (
                 <div>
-                    <h1>Welcome!</h1>
-                    <Route path="/" component={Home}/>
-                    <Route path="/comment" component={Comment}/>
-                    <Route path="/detail" component={Detail}/>
+                    <Switch>
+                        <Route path="/" exact component={Home}/>
+                        <Route path="/comment" component={Comment}/>
+                        <Route path="/detail/:id" component={Detail}/>
+                        <Route path="/list" component={List}/>
+                    </Switch>
                 </div>
             );
         }
     }
+
+    ReactDOM.render(
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>,
+        document.getElementById('root')
+    );
+
+
 
 
 
